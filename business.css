@@ -1,56 +1,41 @@
+/* business.css - lightweight modern responsive style */
 :root{
-  --bg:#f5f7fb;
+  --bg:#ffffff;--muted:#6b7280;--accent:#3b82f6;--accent-2:#6b8cff;--surface:#f8fafc;--maxw:1100px;
   --card:#ffffff;
-  --primary:#0D3B66;
-  --accent:#00A896;
-  --muted:#6b7280;
-  --text:#0b1220;
-  --radius:12px;
-  --container:1100px;
-  --font-main: 'Cairo', 'Inter', sans-serif;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
 *{box-sizing:border-box}
-html,body{height:100%}
-body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-main);direction:rtl}
-.container{max-width:var(--container);margin:0 auto;padding:1rem}
-.site-header{background:transparent;padding:18px 0;position:sticky;top:0;z-index:60;border-bottom:1px solid rgba(11,18,32,0.04)}
-.header-row{display:flex;align-items:center;justify-content:space-between;gap:12px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)}
-.logo{width:46px;height:46px;border-radius:10px}
-.nav{display:flex;gap:14px;align-items:center}
-.nav a{color:var(--muted);text-decoration:none;font-weight:600}
-.menu-btn{display:none}
-.btn{padding:8px 12px;border-radius:10px;text-decoration:none;font-weight:700}
-.btn.primary{background:linear-gradient(90deg,var(--primary),var(--accent));color:#fff}
-.btn.ghost{background:transparent;border:1px solid rgba(11,18,32,0.06)}
-
-/* hero */
-.hero{display:flex;align-items:center;gap:24px;padding:48px 0}
-.hero-text{flex:1}
-.hero-visual{flex:1;display:flex;justify-content:center}
-.hero h1{font-size:2rem;margin:0 0 10px}
-.lead{color:var(--muted);margin:0 0 18px}
-.actions{display:flex;gap:12px}
-.bullet-list{margin-top:12px;color:var(--muted)}
-
-/* grid */
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:18px}
-.card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(11,18,32,0.04)}
-
-/* services */
-.service{background:linear-gradient(90deg, rgba(13,59,102,0.04), rgba(0,168,150,0.03));padding:18px;border-radius:10px;text-align:center}
-
-/* auth/dashboard */
-.auth{padding:40px 0}
-.auth-card{max-width:520px;margin:0 auto}
-.dashboard .stats{margin:18px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
-
-/* footer */
-.site-foot{padding:22px 0;text-align:center;color:var(--muted);border-top:1px solid rgba(11,18,32,0.04)}
-
-/* responsive */
-@media (max-width:900px){
-  .nav{display:none}
-  .menu-btn{display:block}
-  .hero{flex-direction:column-reverse;padding:24px 0}
+body{margin:0;background:var(--bg);color:#0f172a;line-height:1.5}
+.container{max-width:var(--maxw);margin:0 auto;padding:20px}
+.site-header{background:linear-gradient(180deg,#fff, #fbfdff);border-bottom:1px solid #eef2ff}
+.header-grid{display:flex;align-items:center;justify-content:space-between}
+.brand{font-weight:700;color:var(--accent);text-decoration:none;font-size:1.25rem}
+.brand .dot{color:var(--accent-2)}
+.main-nav a{margin-left:14px;color:#0f172a;text-decoration:none}
+.lang-btn{margin-left:12px;padding:6px 10px;border-radius:8px;border:1px solid #e6eefc;background:#fff}
+.hero{display:flex;gap:20px;align-items:center;padding:36px 0}
+.hero-visual{flex:0 0 320px}
+.hero h1{font-size:1.65rem;margin:0 0 10px}
+.cta-row{margin-top:14px}
+.btn{display:inline-block;padding:10px 14px;border-radius:8px;text-decoration:none}
+.btn.primary{background:var(--accent);color:#fff}
+.btn.outline{border:1px solid #dbeafe;color:var(--accent)}
+.features .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:14px}
+.card{background:var(--card);padding:16px;border-radius:10px;border:1px solid #eef2ff}
+.pricing .plan-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+.plan{flex:1;min-width:180px;background:var(--surface);padding:14px;border-radius:10px}
+.plan.recommended{border:2px solid var(--accent);transform:translateY(-4px)}
+.footer-cta{padding:28px 0;text-align:center}
+.site-footer{border-top:1px solid #eef2ff;padding:20px;margin-top:30px;background:#fff}
+.footer-grid{display:flex;justify-content:space-between;gap:16px;align-items:center}
+.contact-form{display:grid;gap:10px;max-width:600px}
+.contact-form label{display:flex;flex-direction:column;font-size:0.95rem}
+.contact-form input,.contact-form textarea{padding:10px;border-radius:8px;border:1px solid #e6eefc}
+.cards{display:flex;gap:12px;flex-wrap:wrap}
+@media (max-width:800px){
+  .hero{flex-direction:column-reverse}
+  .header-grid{flex-direction:row;gap:8px}
+  .footer-grid{flex-direction:column;align-items:flex-start}
+  .brand{font-size:1.1rem}
+  .hero h1{font-size:1.35rem}
 }
