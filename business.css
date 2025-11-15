@@ -1,0 +1,56 @@
+:root{
+  --bg:#f5f7fb;
+  --card:#ffffff;
+  --primary:#0D3B66;
+  --accent:#00A896;
+  --muted:#6b7280;
+  --text:#0b1220;
+  --radius:12px;
+  --container:1100px;
+  --font-main: 'Cairo', 'Inter', sans-serif;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-main);direction:rtl}
+.container{max-width:var(--container);margin:0 auto;padding:1rem}
+.site-header{background:transparent;padding:18px 0;position:sticky;top:0;z-index:60;border-bottom:1px solid rgba(11,18,32,0.04)}
+.header-row{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)}
+.logo{width:46px;height:46px;border-radius:10px}
+.nav{display:flex;gap:14px;align-items:center}
+.nav a{color:var(--muted);text-decoration:none;font-weight:600}
+.menu-btn{display:none}
+.btn{padding:8px 12px;border-radius:10px;text-decoration:none;font-weight:700}
+.btn.primary{background:linear-gradient(90deg,var(--primary),var(--accent));color:#fff}
+.btn.ghost{background:transparent;border:1px solid rgba(11,18,32,0.06)}
+
+/* hero */
+.hero{display:flex;align-items:center;gap:24px;padding:48px 0}
+.hero-text{flex:1}
+.hero-visual{flex:1;display:flex;justify-content:center}
+.hero h1{font-size:2rem;margin:0 0 10px}
+.lead{color:var(--muted);margin:0 0 18px}
+.actions{display:flex;gap:12px}
+.bullet-list{margin-top:12px;color:var(--muted)}
+
+/* grid */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:18px}
+.card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(11,18,32,0.04)}
+
+/* services */
+.service{background:linear-gradient(90deg, rgba(13,59,102,0.04), rgba(0,168,150,0.03));padding:18px;border-radius:10px;text-align:center}
+
+/* auth/dashboard */
+.auth{padding:40px 0}
+.auth-card{max-width:520px;margin:0 auto}
+.dashboard .stats{margin:18px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+
+/* footer */
+.site-foot{padding:22px 0;text-align:center;color:var(--muted);border-top:1px solid rgba(11,18,32,0.04)}
+
+/* responsive */
+@media (max-width:900px){
+  .nav{display:none}
+  .menu-btn{display:block}
+  .hero{flex-direction:column-reverse;padding:24px 0}
+}
