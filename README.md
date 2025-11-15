@@ -1,2 +1,2 @@
-# backend
-FastAPI placeholder
+# frontend
+Vite + React placeholder
