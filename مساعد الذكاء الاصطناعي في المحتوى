@@ -1,0 +1,41 @@
+
+// backend/services/ai-content-assistant.ts
+export class AIContentAssistant {
+  async generateCaption(context: ContentContext): Promise<CaptionSuggestion[]> {
+    const prompt = `
+      أنت خبير تسويق عربي محترف. 
+      السياق: ${context.platform} - ${context.topic}
+      الجمهور: ${context.audience}
+      النبرة: ${context.tone}
+      
+      أنشئ 3 نسخ إعلانية احترافية:
+      - جذابة وتناسب الثقافة العربية
+      - تحتوي على دعوة للعمل
+      - مناسبة للمنصة المحددة
+      - تضم هاشتاقات ذكية
+    `;
+
+    const response = await this.callOpenAI(prompt);
+    return this.parseCaptionSuggestions(response);
+  }
+
+  async generateHashtagStrategy(topic: string, platform: string): Promise<HashtagGroup[]> {
+    return [
+      {
+        category: 'هاشتاقات عالية الوصول',
+        tags: await this.getTrendingHashtags(platform, topic),
+        recommendation: 'استخدم 2-3 من هذه لأقصى وصول'
+      },
+      {
+        category: 'هاشتاقات متخصصة',
+        tags: await this.getNicheHashtags(topic),
+        recommendation: 'استخدم 4-5 للوصول للجمهور المستهدف'
+      },
+      {
+        category: 'هاشتاقات العلامة التجارية', 
+        tags: this.generateBrandedHashtags(topic),
+        recommendation: 'استخدم 1-2 لبناء الهوية'
+      }
+    ];
+  }
+}
